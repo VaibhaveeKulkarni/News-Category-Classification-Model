@@ -80,7 +80,7 @@ try:
         model = pickle.load(file)
     with open(vectorizer_path, 'rb') as file:
         tfidf_vectorizer = pickle.load(file)
-    st.success("Model and TF-IDF vectorizer loaded successfully!")
+    
 except Exception as e:
     st.error(f"An error occurred while loading the model or vectorizer: {e}")
     st.stop()
