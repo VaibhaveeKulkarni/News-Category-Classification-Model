@@ -8,13 +8,11 @@ import os
 
 # Download necessary NLTK data (only if not already available in the environment)
 try:
-    nltk.data.find('corpora/stopwords')
-except nltk.downloader.DownloadError:
+    nltk.download('punkt')
     nltk.download('stopwords')
-try:
-    nltk.data.find('corpora/wordnet')
-except nltk.downloader.DownloadError:
     nltk.download('wordnet')
+except Exception:
+    pass
 
 # Initialize NLTK components
 stop_words = set(stopwords.words('english'))
